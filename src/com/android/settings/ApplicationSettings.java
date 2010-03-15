@@ -54,6 +54,11 @@ public class ApplicationSettings extends PreferenceActivity implements
         if (!SystemProperties.getBoolean("cm.a2sd.active", false)) {
             mApps2SD.setEnabled(false);
         }
+
+        if (SystemProperties.getString("ro.product.device").equals("dream")) {
+            mApps2SD.setEnabled(false);
+            mApps2SD.setChecked(true);
+        }
         
         if (getResources().getConfiguration().keyboard == Configuration.KEYBOARD_NOKEYS) {
             // No hard keyboard, remove the setting for quick launch
