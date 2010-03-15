@@ -55,7 +55,7 @@ public class ApplicationSettings extends PreferenceActivity implements
             mApps2SD.setEnabled(false);
         }
 
-        if (SystemProperties.getString("ro.product.device").equals("dream")) {
+        if (SystemProperties.get("ro.product.device").equals("dream")) {
             mApps2SD.setEnabled(false);
             mApps2SD.setChecked(true);
         }
