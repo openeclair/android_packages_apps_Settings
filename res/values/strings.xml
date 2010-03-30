@@ -1430,12 +1430,6 @@
  from unknown sources. You agree that you are solely responsible for any
  damage to your phone or loss of data that may result from using
  these applications.</string>
-    <!-- Enable/Disable Apps2SD -->
-    <string name="apps2sd_title">Apps2SD</string>
-    <!-- Apps2SD Off Summary -->
-    <string name="apps2sd_summary_off">New applications will be installed on internal storage</string>
-    <!-- Apps2SD On Summary -->
-    <string name="apps2sd_summary_on">New applications will be installed on SD card</string>
     <!-- Manage applications, individual application info screen title. For example, if they click on "Browser" in "Manage applications", the title of the next screen will be this -->
     <string name="application_info_label">Application info</string>
     <!-- Manage applications, individual application info screen, section heading for stuff relating to an app's storage settings. -->
@@ -1675,6 +1669,10 @@ found in the list of installed applications.</string>
     <string name="enable_adb">USB debugging</string>
     <!-- Setting checkbox summary for Whether to enable USB debugging support on the phone -->
     <string name="enable_adb_summary">Debug mode when USB is connected</string>
+    <!-- Setting checkbox title for displaying USB debugging notification -->
+    <string name="adb_notify">USB debugging notify</string>
+    <!-- Setting checkbox summary for displaying USB debugging notification -->
+    <string name="adb_notify_summary">Display a notification when USB debugging is connected</string>
     <!-- Setting Checkbox title whether to keep the screen on when plugged in to a power source -->
     <string name="keep_screen_on">Stay awake</string>
     <!-- setting Checkbox summary whether to keep the screen on when plugged in  -->
@@ -2232,4 +2230,19 @@ found in the list of installed applications.</string>
     <string name="internet_tethering_summary_on">Internet tethering over USB is enabled</string>
     <string name="internet_tethering_summary_off">Internet tethering over USB is disabled</string>
 
+    <!-- Apps2SD -->
+    <!-- Text for the "Move" button. -->
+    <string name="move_text">Move</string>
+    <!-- Text to indicate an application is installed on inernal memory -->
+    <string name="internal_text">Internal</string>
+    <!-- Text to indicate an application is installed on the SD Card -->
+    <string name="sdcard_text">SD Card</string>
+    <!-- Text to indicate an application is installed on the system partition -->
+    <string name="system_text">System</string>
+    <!-- Enable/Disable Apps2SD -->
+    <string name="apps2sd_title">Apps2SD</string>
+    <!-- Apps2SD Off Summary -->
+    <string name="apps2sd_summary_off">New applications will be installed on internal storage</string>
+    <!-- Apps2SD On Summary -->
+    <string name="apps2sd_summary_on">New applications will be installed on SD card</string>
 </resources>
