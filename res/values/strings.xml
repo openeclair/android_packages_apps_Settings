@@ -1003,6 +1003,9 @@
     <!-- Sound & display settings screen, setting option for trackwall wake -->
     <string name="trackball_wake_screen_title">Trackball wakes device</string>
     <string name="trackball_wake_screen_summary">Wake up the device when the trackball is clicked</string>
+    <!-- Sound & display settings screen, setting option for trackwall unlock -->
+    <string name="trackball_unlock_screen_title">Trackball unlocks device</string>
+    <string name="trackball_unlock_screen_summary">Unlock the device when the trackball is clicked</string>
 
     <!-- SIM lock settings title -->
     <string name="sim_lock_settings">SIM card lock settings</string>
@@ -2251,5 +2254,6 @@ found in the list of installed applications.</string>
     <!-- Proxy settings -->
     <string name="proxy_setting">Proxy settings</string>
     <string name="proxy_setting_summary">Configure a proxy to access the internet</string>
+    <string name="proxy_wifi_only">Use proxy only on wifi</string>
 
 </resources>
