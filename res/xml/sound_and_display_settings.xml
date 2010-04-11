@@ -145,19 +145,6 @@
         		android:summary="@string/trackball_wake_screen_summary"
         		android:persistent="false"
         		android:defaultValue="false" />
-	<CheckBoxPreference
-     		android:key="trackball_unlock_screen"
-       		android:title="@string/trackball_unlock_screen_title"
-       		android:summary="@string/trackball_unlock_screen_summary"
-       		android:persistent="false"
-        	android:defaultValue="false" />
-	<CheckBoxPreference
-        	android:key="menu_unlock_screen"
-        	android:title="@string/menu_unlock_screen_title"
-        	android:summary="@string/menu_unlock_screen_summary"
-        	android:persistent="false"
-        	android:defaultValue="false" />
-	
 
     </PreferenceCategory>
 

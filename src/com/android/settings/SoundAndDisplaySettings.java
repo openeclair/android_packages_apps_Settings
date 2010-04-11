@@ -66,8 +66,6 @@ public class SoundAndDisplaySettings extends PreferenceActivity implements
     private static final String KEY_NOTIFICATION_SCREEN_ON = "notification_screen_on";
     private static final String KEY_BREATHING_LIGHT_COLOR = "breathing_light_color";
     private static final String KEY_TRACKBALL_WAKE_SCREEN = "trackball_wake_screen";
-    private static final String KEY_TRACKBALL_UNLOCK_SCREEN = "trackball_unlock_screen";
-    private static final String KEY_MENU_UNLOCK_SCREEN = "menu_unlock_screen";
     private static final String KEY_ACCELEROMETER_MODE = "accelerometer_mode";
     
     private CheckBoxPreference mSilent;
@@ -93,8 +91,6 @@ public class SoundAndDisplaySettings extends PreferenceActivity implements
     private CheckBoxPreference mNotificationScreenOn;
     private ListPreference mBreathingLightColor;
     private CheckBoxPreference mTrackballWakeScreen;
-    private CheckBoxPreference mTrackballUnlockScreen;
-    private CheckBoxPreference mMenuUnlockScreen;
     private float[] mAnimationScales;
 
     private AudioManager mAudioManager;
@@ -177,10 +173,6 @@ public class SoundAndDisplaySettings extends PreferenceActivity implements
         mBreathingLightColor.setOnPreferenceChangeListener(this);
         mTrackballWakeScreen = (CheckBoxPreference)
                 mTrackballSettings.findPreference(KEY_TRACKBALL_WAKE_SCREEN);
-	mTrackballUnlockScreen = (CheckBoxPreference)
-                mTrackballSettings.findPreference(KEY_TRACKBALL_UNLOCK_SCREEN);
-	mMenuUnlockScreen = (CheckBoxPreference)
-                mTrackballSettings.findPreference(KEY_MENU_UNLOCK_SCREEN);
         if (mNotificationPulse != null &&
                 getResources().getBoolean(R.bool.has_intrusive_led) == false) {
             mSoundDisplaySettings.removePreference(mTrackballSettings);
@@ -198,20 +190,6 @@ public class SoundAndDisplaySettings extends PreferenceActivity implements
                 mNotificationScreenOn.setOnPreferenceChangeListener(this);
             } catch (SettingNotFoundException snfe) {
                 Log.e(TAG, Settings.System.NOTIFICATION_SCREEN_ON + " not found");
-            }
-            try {
-                mTrackballUnlockScreen.setChecked(Settings.System.getInt(resolver,
-                        Settings.System.TRACKBALL_UNLOCK_SCREEN) == 1);
-                mNotificationScreenOn.setOnPreferenceChangeListener(this);
-            } catch (SettingNotFoundException snfe) {
-                Log.e(TAG, Settings.System.TRACKBALL_UNLOCK_SCREEN + " not found");
-            }
-            try {
-                mMenuUnlockScreen.setChecked(Settings.System.getInt(resolver,
-                        Settings.System.MENU_UNLOCK_SCREEN) == 1);
-                mNotificationScreenOn.setOnPreferenceChangeListener(this);
-            } catch (SettingNotFoundException snfe) {
-                Log.e(TAG, Settings.System.MENU_UNLOCK_SCREEN + " not found");
             }
         }
         
@@ -379,14 +357,6 @@ public class SoundAndDisplaySettings extends PreferenceActivity implements
             value = mTrackballWakeScreen.isChecked();
             Settings.System.putInt(getContentResolver(),
                     Settings.System.TRACKBALL_WAKE_SCREEN, value ? 1 : 0);
-        } else if (preference == mTrackballUnlockScreen) {
-            value = mTrackballUnlockScreen.isChecked();
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.TRACKBALL_UNLOCK_SCREEN, value ? 1 : 0);
-        } else if (preference == mMenuUnlockScreen) {
-            value = mMenuUnlockScreen.isChecked();
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.MENU_UNLOCK_SCREEN, value ? 1 : 0);
         } 
 
         return true;
